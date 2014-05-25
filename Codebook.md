@@ -13,20 +13,9 @@ Variables
 * *Activity*, description of each of the six activities performed by each voluneer
 
 * *(prefix)(signal).(statistic)[.direction]*
-  * \(\mbox{prefix} \in \{\mbox{t}, \mbox{f}\}\)
-  * \(\mbox{signal} \in \{
-  \mbox{BodyAcc},
-  \mbox{GravityAcc},
-  \mbox{BodyAccJerk},
-  \mbox{BodyGyro},
-  \mbox{BodyGyroJerk},
-  \mbox{BodyAccMag},
-  \mbox{GravityAccMag},
-  \mbox{BodyBodyAccJerkMag},
-  \mbox{BodyBodyGyroMag},
-  \mbox{BodyBodyGyroJerkMag}
-  \}\)
-  * \(\mbox{statistic} \in \{\mbox{mean}, \mbox{std}\}\)
-  * \(\mbox{direction} \in \{\mbox{X}, \mbox{Y}, \mbox{Z}\}\)
+  * *prefix* in {t, f}
+  * *signal* in {BodyAcc, GravityAcc, BodyAccJerk, BodyGyro, BodyGyroJerk, BodyAccMag, GravityAccMag, BodyBodyAccJerkMag, BodyBodyGyroMag, BodyBodyGyroJerkMag}
+  * *statistic* in {mean, std}
+  * *direction* in {X, Y, Z}
  
 Note, in the original data set, the Fast Fourier Transform, indicated by the prefix *f*, was not applied to the signals *GravityAcc*, *BodyGyroJerk*, and *GravityAccMag*.
