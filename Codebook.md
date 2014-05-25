@@ -12,7 +12,7 @@ Variables
 
 * *Activity*, description of each of the six activities performed by each voluneer
 
-* *(prefix)(signal).(statistic)[.direction]*
+* *(prefix)(signal).(statistic)[.direction]*, measurement averaged for each subject and activity
   * *prefix* in {t, f}
   * *signal* in {BodyAcc, GravityAcc, BodyAccJerk, BodyGyro, BodyGyroJerk, BodyAccMag, GravityAccMag, BodyBodyAccJerkMag, BodyBodyGyroMag, BodyBodyGyroJerkMag}
   * *statistic* in {mean, std}
