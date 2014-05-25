@@ -34,19 +34,19 @@ names(y) <- "Activity"
 X <- rbind(X.train, X.test)
 names(X) <- make.names(features$V2)
 
-HCRData <- cbind(subject, y, X)
+HARData <- cbind(subject, y, X)
 
 #
 # 2. Extracts only the measurements on the mean and standard deviation for each measurement
 #
 
-HCRData <- HCRData[, grep("Subject|Activity|\\.(mean|std)\\.", names(HCRData))] # keeps columns that contain Subject or Activity or .mean. or .std.
+HARData <- HARData[, grep("Subject|Activity|\\.(mean|std)\\.", names(HARData))] # keeps columns that contain Subject or Activity or .mean. or .std.
 
 #
 # 3. Uses descriptive activity names to name the activities in the data set
 #
 
-HCRData <- transform(HCRData, Activity = activity.labels$V2[Activity])
+HARData <- transform(HARData, Activity = activity.labels$V2[Activity])
 
 #
 # 4. Appropriately labels the data set with descriptive names
@@ -54,17 +54,17 @@ HCRData <- transform(HCRData, Activity = activity.labels$V2[Activity])
 
 # this step is mostly done already; just need to tidy up column names
 
-names(HCRData) <- gsub("\\.+", "\\.", names(HCRData)) # replaces multiple periods with single periods
-names(HCRData) <- gsub("\\.$", "", names(HCRData)) # removes single period at end of column name
+names(HARData) <- gsub("\\.+", "\\.", names(HARData)) # replaces multiple periods with single periods
+names(HARData) <- gsub("\\.$", "", names(HARData)) # removes single period at end of column name
 
 #
 # 5. Creates a second, independent tidy data set with the average of each variable for each activity and each subject
 #
 
-HCRDataAvg <- ddply(HCRData,
+HARDataAvg <- ddply(HARData,
                     .(Subject, Activity),
                     .fun = function(df)
                             sapply(df[, -c(1, 2)], mean)
                     )
 
-write.table(HCRDataAvg, file = "HCRDataAvg.txt", row.names = FALSE)
+write.table(HARDataAvg, file = "HARDataAvg.txt", row.names = FALSE)

@@ -1,17 +1,32 @@
-Title
-========================================================
+Codebook for HARDataAvg
+=======================
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring web pages (click the **Help** toolbar button for more details on using R Markdown).
+The derived data set was created by merging the training and  test data sets from the HAR database to create a single data set. Only mean and standard deviation measurements were extracted (step 2 in R-script). Each extracted variable was averaged for each activity and each subject (step 5 in R-script).
 
-When you click the **Knit HTML** button a web page will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+For a detailed description of the features measured in the HAR database, please refer to the file *features_info.txt* in the original data set.
 
-```{r}
-summary(cars)
-```
+Variables
+=========
 
-You can also embed plots, for example:
+* *Subject*, identifier of each of the thirty volunteers in the HAR experiement
 
-```{r fig.width=7, fig.height=6}
-plot(cars)
-```
+* *Activity*, description of each of the six activities performed by each voluneer
 
+* *(prefix)(signal).(statistic)[.direction]*
+  * \(\mbox{prefix} \in \{\mbox{t}, \mbox{f}\}\)
+  * \(\mbox{signal} \in \{
+  \mbox{BodyAcc},
+  \mbox{GravityAcc},
+  \mbox{BodyAccJerk},
+  \mbox{BodyGyro},
+  \mbox{BodyGyroJerk},
+  \mbox{BodyAccMag},
+  \mbox{GravityAccMag},
+  \mbox{BodyBodyAccJerkMag},
+  \mbox{BodyBodyGyroMag},
+  \mbox{BodyBodyGyroJerkMag}
+  \}\)
+  * \(\mbox{statistic} \in \{\mbox{mean}, \mbox{std}\}\)
+  * \(\mbox{direction} \in \{\mbox{X}, \mbox{Y}, \mbox{Z}\}\)
+ 
+Note, in the original data set, the Fast Fourier Transform, indicated by the prefix *f*, was not applied to the signals *GravityAcc*, *BodyGyroJerk*, and *GravityAccMag*.

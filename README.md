@@ -1,17 +1,20 @@
-Title
-========================================================
+Introduction
+============
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring web pages (click the **Help** toolbar button for more details on using R Markdown).
+These data are derived from the [Human Activity Recognition (HAR) Using Smartphones Data Set](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones).  The means and standard deviations of the 33 signals from the smartphones' accelerometers and gyroscopes, worn by the 30 subjects each performing the 6 activities, were extracted from the *training* and *test* data sets and averaged for each subject and activity.
 
-When you click the **Knit HTML** button a web page will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+Contents
+========
 
-```{r}
-summary(cars)
-```
+The repo consists of:
 
-You can also embed plots, for example:
+1. README.md, this file
 
-```{r fig.width=7, fig.height=6}
-plot(cars)
-```
+2. Codebook.md, information about the variables in the derived data set
 
+3. run_analysis.R, a script for creating the derived data set from the original data set
+
+Instructions
+============
+
+Download the HAR data set from [here](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip). Extract the contents of the zip file into the directory *UCI HAR Dataset*, which should be in your working directory.  Source the script *run_analysis.R* to create the file *HARDataAvg.txt* containing the derived data set.
